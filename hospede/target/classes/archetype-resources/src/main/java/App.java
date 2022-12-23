@@ -1,4 +1,4 @@
-package com.hotelalura;
+package $com.hotelalura;
 
 /**
  * Hello world!
