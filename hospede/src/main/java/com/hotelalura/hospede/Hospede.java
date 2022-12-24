@@ -10,17 +10,11 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "HOSPEDE")
 public class Hospede {
+
     @Id
-    @SequenceGenerator(
-            name = "hospede_id_sequence",
-            sequenceName = "hospede_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "hospede_id_sequence"
-    )
+    @SequenceGenerator(name = "hospede_id_sequence", sequenceName = "hospede_id_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hospede_id_sequence")
     private Integer id;
     private String nome;
     private String sobrenome;
