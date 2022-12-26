@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>hospede</module>
+    <module>fraude</module>
   </modules>
 
   <name>hotelaluraservice</name>
