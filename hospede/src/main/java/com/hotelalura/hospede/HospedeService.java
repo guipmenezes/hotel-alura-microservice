@@ -21,7 +21,7 @@ public class HospedeService {
         hospedeRepository.saveAndFlush(hospede);
         //todo: checar se é fraudulento
         FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{hospedeId}",
+                "http://FRAUDE/api/v1/fraud-check/{hospedeId}",
                 FraudCheckResponse.class,
                 hospede.getId()
         );
