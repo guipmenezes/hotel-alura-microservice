@@ -17,9 +17,9 @@ public class HospedeService {
                 .nacionalidade(request.nacionalidade())
                 .telefone(request.telefone())
                 .build();
-        //todo: checar validade
+
         hospedeRepository.saveAndFlush(hospede);
-        //todo: checar se é fraudulento
+
         FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
                 "http://FRAUDE/api/v1/fraud-check/{hospedeId}",
                 FraudCheckResponse.class,

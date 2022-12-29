@@ -12,8 +12,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hospede" />
-        <module name="eureka-server" />
         <module name="fraude" />
+        <module name="eureka-server" />
+        <module name="kafka" />
       </profile>
     </annotationProcessing>
   </component>
