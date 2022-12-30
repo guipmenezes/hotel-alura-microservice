@@ -19,3 +19,9 @@ Quando o cliente tem contato com o serviço e insere seus dados, esses dados sã
 ### Exemplificação de funcionamento:
 <img src="https://user-images.githubusercontent.com/86692306/210026729-79fd737d-7eac-4e65-a023-debe86068da0.png" />
 
+<br>
+### Próximas implementações
+
+Como qualquer boa arquitetura de microserviço, já estou implementando um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase. Também estou pensando na melhor ferramenta para criar o Config Server, até o momento estou optando pelo Spring Cloud Config.
+<br>
+Em um futuro mais distante, estou querendo implementar o Kubernetes.
