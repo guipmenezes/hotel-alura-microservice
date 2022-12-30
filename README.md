@@ -23,6 +23,7 @@ Quando o cliente tem contato com o serviço e insere seus dados, esses dados sã
 
 ### Próximas implementações
 
-Como qualquer boa arquitetura de microserviço, já estou implementando um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase. Também estou pensando na melhor ferramenta para criar o Config Server, até o momento estou optando pelo Spring Cloud Config.
+Como qualquer boa arquitetura de microserviço, já estou implementando um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase. Também estou pensando na melhor ferramenta para criar o Config Server, até o momento estou optando pelo Spring Cloud Config. Também pretendo implementar um sistema de tracing por meio do Zipkin.
+<br>
 <br>
 Em um futuro mais distante, estou querendo implementar o Kubernetes.
