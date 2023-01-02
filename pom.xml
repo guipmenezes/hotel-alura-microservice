@@ -13,6 +13,7 @@
     <module>fraude</module>
     <module>eureka-server</module>
     <module>kafka</module>
+      <module>cloud-gateway</module>
   </modules>
 
   <name>hotelaluraservice</name>

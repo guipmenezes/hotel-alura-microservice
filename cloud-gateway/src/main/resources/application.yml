@@ -1,0 +1,24 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: hospede
+          uri: lb://hospede
+          predicates:
+            - Path=/hospedes/**
+        - id: fraude
+          uri: lb://fraude
+          predicates:
+            - Path=/fraude-check/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
