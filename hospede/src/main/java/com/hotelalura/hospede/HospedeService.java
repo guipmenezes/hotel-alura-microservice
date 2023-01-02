@@ -4,11 +4,23 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class HospedeService {
     private final HospedeRepository hospedeRepository;
     private final RestTemplate restTemplate;
+
+    public List<Hospede> findHospede() {
+        return hospedeRepository.findAll();
+    }
+
+    public void deleteHospede(Integer id) {
+        hospedeRepository.deleteById(id);
+    }
+
     public void registerHospede(HospedeRegistrationRequest request) {
         Hospede hospede = Hospede.builder()
                 .nome(request.nome())
@@ -20,9 +32,9 @@ public class HospedeService {
 
         hospedeRepository.saveAndFlush(hospede);
 
-        FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
-                "http://FRAUDE/api/v1/fraud-check/{hospedeId}",
-                FraudCheckResponse.class,
+        FraudeCheckResponse fraudCheckResponse= restTemplate.getForObject(
+                "http://FRAUDE/fraude-check/{hospedeId}",
+                FraudeCheckResponse.class,
                 hospede.getId()
         );
 

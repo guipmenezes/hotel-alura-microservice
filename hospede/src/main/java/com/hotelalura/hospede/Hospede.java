@@ -13,7 +13,7 @@ import java.sql.Date;
 public class Hospede {
 
     @Id
-    @SequenceGenerator(name = "hospede_id_sequence", sequenceName = "hospede_id_sequence")
+    @SequenceGenerator(name = "hospede_id_sequence", sequenceName = "hospede_id_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hospede_id_sequence")
     private Integer id;
     private String nome;

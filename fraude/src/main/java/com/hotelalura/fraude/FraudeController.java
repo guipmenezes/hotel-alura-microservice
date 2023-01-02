@@ -5,17 +5,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/fraud-check")
+@RequestMapping("/fraude-check")
 @AllArgsConstructor
 @Slf4j
-public class FraudController {
+public class FraudeController {
     private final FraudeCheckService fraudeCheckService;
 
     @GetMapping(path = "{hospedeId}")
-    public FraudCheckResponse isFraudster(@PathVariable("hospedeId") Integer hospedeId) {
+    public FraudeCheckResponse isFraudster(@PathVariable("hospedeId") Integer hospedeId) {
 
         Boolean isFraudulentHospede = fraudeCheckService.isFradulentHospede(hospedeId);
         log.info("Verificação de fraude requisitada para o hospede {}", hospedeId);
-        return new FraudCheckResponse(isFraudulentHospede);
+        return new FraudeCheckResponse(isFraudulentHospede);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFraude(@PathVariable("id") Integer id) {
+        fraudeCheckService.deleteFraude(id);
     }
 }

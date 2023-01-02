@@ -10,6 +10,10 @@ import java.time.LocalDateTime;
 public class FraudeCheckService {
     private final FraudeCheckHistoryRepository fraudeCheckHistoryRepository;
 
+    public void deleteFraude(Integer id) {
+        fraudeCheckHistoryRepository.deleteById(id);
+    }
+
     public boolean isFradulentHospede(Integer hospedeId) {
         fraudeCheckHistoryRepository.save(
                 FraudeCheckHistory.builder()
