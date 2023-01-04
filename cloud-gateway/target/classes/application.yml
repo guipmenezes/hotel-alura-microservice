@@ -11,10 +11,40 @@ spring:
           uri: lb://hospede
           predicates:
             - Path=/hospedes/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: hospede-service
+                fallbackuri: forward:/hospedeServiceFallBack
         - id: fraude
           uri: lb://fraude
           predicates:
             - Path=/fraude-check/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: hospede-service
+                fallbackuri: forward:/fraudeServiceFallBack
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+      slidingWindowSize: 50
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
 eureka:
   client:
