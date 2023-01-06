@@ -15,6 +15,7 @@
     <module>kafka</module>
       <module>cloud-gateway</module>
       <module>hystrix-dashboard</module>
+      <module>cloud-config-server</module>
   </modules>
 
   <name>hotelaluraservice</name>
@@ -27,6 +28,8 @@
     <spring.boot.maven.plugin.version>3.0.0</spring.boot.maven.plugin.version>
     <spring.boot.dependecies.version>3.0.0</spring.boot.dependecies.version>
     <spring.cloud-version>2022.0.0</spring.cloud-version>
+    <micrometer-tracing.version>1.0.0</micrometer-tracing.version>
+    <brave.version>5.14.1</brave.version>
   </properties>
 
   <dependencyManagement>
@@ -42,6 +45,13 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>${spring.cloud-version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-tracing-bom</artifactId>
+        <version>${micrometer-tracing.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -66,6 +76,10 @@
     <dependency>
       <groupId>org.springframework.kafka</groupId>
       <artifactId>spring-kafka-test</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-bootstrap</artifactId>
     </dependency>
   </dependencies>
 
