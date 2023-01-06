@@ -8,8 +8,9 @@
 * Spring Cloud 2022.0.0
 * Spring Cloud Netflix Eureka Server/Client
 * Docker
+* Github (config-server)
+* Zipkin
 * PostreSQL
-* Apache Kafka (Implementando serviço de mensageria)
 
 ## Sobre o projeto:
 Seguindo a sequência dos projetos do Hotel Alura (Desktop app e Rest API), este projeto é uma implementação do serviço de Hospede com sistema contra fraudes.
