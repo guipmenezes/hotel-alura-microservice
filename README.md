@@ -7,8 +7,8 @@
 * Spring Data JPA
 * Spring Cloud 2022.0.0
 * Spring Cloud Netflix Eureka Server/Client
+* Spring Cloud Config Server
 * Docker
-* Github (config-server)
 * Zipkin
 * PostreSQL
 
@@ -20,9 +20,13 @@ Quando o cliente tem contato com o serviço e insere seus dados, esses dados sã
 ### Exemplificação de funcionamento:
 <img src="https://user-images.githubusercontent.com/86692306/211331493-a3ea7c77-51c3-4372-a61d-9e0129296918.png" />
 <br>
+<br>
+### Config Server:
+Com a implementação do Cloud Config Server, optei por armazenar as configurações no próprio github.
+Link: https://github.com/guipmenezes/hotel-alura-config-server
 
 ### Próximas implementações
 
-Uma das últimas features que estou buscando implementar é um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase.
+A próxima feature vai ser a criação do microserviço de reserva, que é presente nos outros projetos do Hotel Alura, completando os microserviços da arquitetura. Uma das últimas features que estou buscando implementar é um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase.
 <br>
 <br>
