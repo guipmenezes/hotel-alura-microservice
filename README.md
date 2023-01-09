@@ -20,7 +20,7 @@ Quando o cliente tem contato com o serviço e insere seus dados, esses dados sã
 ### Exemplificação de funcionamento:
 <img src="https://user-images.githubusercontent.com/86692306/211331493-a3ea7c77-51c3-4372-a61d-9e0129296918.png" />
 <br>
-<br>
+
 ### Config Server:
 Com a implementação do Cloud Config Server, optei por armazenar as configurações no próprio github.
 Link: https://github.com/guipmenezes/hotel-alura-config-server
