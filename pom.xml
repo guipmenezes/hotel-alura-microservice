@@ -16,6 +16,7 @@
       <module>cloud-gateway</module>
       <module>hystrix-dashboard</module>
       <module>cloud-config-server</module>
+      <module>reservas</module>
   </modules>
 
   <name>hotelaluraservice</name>

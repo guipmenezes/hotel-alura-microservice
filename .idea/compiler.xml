@@ -13,6 +13,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="fraude" />
         <module name="cloud-config-server" />
+        <module name="reservas" />
         <module name="kafka" />
         <module name="hystrix-dashboard" />
         <module name="hospede" />

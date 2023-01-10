@@ -8,5 +8,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/guipmenezes/config-server
+          uri: https://github.com/guipmenezes/hotel-alura-config-server
           clone-on-start: true
