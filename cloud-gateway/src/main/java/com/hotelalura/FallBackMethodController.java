@@ -12,6 +12,11 @@ public class FallBackMethodController {
         return "O sistema de hospede está demorando mais do que o esperado." + "Por favor tente novamente";
     }
 
+    @RequestMapping("reservaServiceFallBack")
+    public String reservasServiceFallBackMethod() {
+        return "O sistema de reserva está demorando mais do que o esperado." + "Por favor tente novamente";
+    }
+
     @RequestMapping("/fraudeServiceFallBack")
     public String fraudeServiceFallBackMethod() {
         return "O sistema de checkagem de fraude está demorando mais do que o esperado." + "Por favor tente novamente";

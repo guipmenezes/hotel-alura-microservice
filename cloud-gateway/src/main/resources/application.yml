@@ -16,6 +16,15 @@ spring:
               args:
                 name: hospede-service
                 fallbackuri: forward:/hospedeServiceFallBack
+        - id: reserva
+          uri: lb://reserva
+          predicates:
+            - Path=/reservas/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: reserva-service
+                fallbackuri: forward:/reservaServiceFallBack
         - id: fraude
           uri: lb://fraude
           predicates:
@@ -23,7 +32,7 @@ spring:
           filters:
             - name: CircuitBreaker
               args:
-                name: hospede-service
+                name: fraude-service
                 fallbackuri: forward:/fraudeServiceFallBack
 
 resilience4j.circuitbreaker:
