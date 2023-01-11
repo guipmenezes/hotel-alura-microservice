@@ -1,16 +1,20 @@
 package com.hotelalura.hospede;
 
+import com.hotelalura.hospede.VO.Reservas;
+import com.hotelalura.hospede.VO.ResponseTemplate;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class HospedeService {
+    @Autowired
     private final HospedeRepository hospedeRepository;
+    @Autowired
     private final RestTemplate restTemplate;
 
     public List<Hospede> findHospede() {
@@ -35,13 +39,21 @@ public class HospedeService {
         FraudeCheckResponse fraudCheckResponse= restTemplate.getForObject(
                 "http://FRAUDE/fraude-check/{hospedeId}",
                 FraudeCheckResponse.class,
-                hospede.getId()
+                hospede.getHospedeId()
         );
 
         if(fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("Hospede fraudulento");
         }
+    }
 
-        //todo: mandar uma notificação
+    public ResponseTemplate getHospedeWithReserva(Integer hospedeId) {
+        ResponseTemplate rt = new ResponseTemplate();
+        Hospede hospede = hospedeRepository.findByHospedeId(hospedeId);
+        Reservas reservas = restTemplate.getForObject("http://RESERVA/reservas/" + hospede.getReservasId(), Reservas.class);
+
+        rt.setHospede(hospede);
+        rt.setReservas(reservas);
+        return rt;
     }
 }

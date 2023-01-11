@@ -14,7 +14,7 @@ public class Reservas {
     @Id
     @SequenceGenerator(name="reserva_id_sequence", sequenceName="reserva_id_sequence", allocationSize=1)
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="reserva_id_sequence")
-    private Integer id;
+    private Integer reservasId;
     private Date dataEntrada;
     private Date dataSaida;
     private Integer valor;

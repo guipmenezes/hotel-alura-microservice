@@ -21,6 +21,11 @@ public class ReservasController {
         return reservasService.getReserva();
     }
 
+    @GetMapping("/{id}")
+    public Reservas findReservasById(@PathVariable("id") Integer reservasId) {
+        return reservasService.findReservasById(reservasId);
+    }
+
     @PostMapping
     public void registerReserva(@RequestBody ReservasRegistrationRequest reservasRegistrationRequest) {
         log.info("novo registro de reserva {}", reservasRegistrationRequest);

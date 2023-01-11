@@ -1,5 +1,6 @@
 package com.hotelalura.hospede;
 
+import com.hotelalura.hospede.VO.ResponseTemplate;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,11 @@ public class HospedeController {
     public void deleteHospede(@PathVariable("id") Integer id) {
         log.info("deletando o hospede de id {}", id);
         hospedeService.deleteHospede(id);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseTemplate getHospedeWithReserva(@PathVariable("id") Integer hospedeId) {
+        log.info("Trazendo o hospede com a reserva");
+        return hospedeService.getHospedeWithReserva(hospedeId);
     }
 }
