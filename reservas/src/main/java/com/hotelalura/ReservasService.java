@@ -28,6 +28,6 @@ public class ReservasService {
     }
     public Reservas findReservasById(Integer reservasId) {
         log.info("Encontrando uma nova reserva por meio do repositório");
-        return reservasRepository.findByReservaId(reservasId);
+        return reservasRepository.findByReservasId(reservasId);
     }
 }

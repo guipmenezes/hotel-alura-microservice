@@ -10,7 +10,6 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Reservas {
-
     private Integer reservasId;
     private Date dataEntrada;
     private Date dataSaida;

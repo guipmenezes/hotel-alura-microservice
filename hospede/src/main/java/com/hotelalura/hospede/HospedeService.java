@@ -50,7 +50,7 @@ public class HospedeService {
     public ResponseTemplate getHospedeWithReserva(Integer hospedeId) {
         ResponseTemplate rt = new ResponseTemplate();
         Hospede hospede = hospedeRepository.findByHospedeId(hospedeId);
-        Reservas reservas = restTemplate.getForObject("http://RESERVA/reservas/" + hospede.getReservasId(), Reservas.class);
+        Reservas reservas = restTemplate.getForObject("http://RESERVA/reservas/" + hospede.getHospedeId(), Reservas.class);
 
         rt.setHospede(hospede);
         rt.setReservas(reservas);
