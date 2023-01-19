@@ -18,7 +18,7 @@ A arquitetura utilizada foi a de microserviços, em que cada um dos serviços te
 Quando o cliente tem contato com o serviço e insere seus dados, esses dados são tratados pelo Load Balancer (que por padrão é configurado na arquitetura Round-Robin) e ao concluir o seu cadastro, o microserviço de fraude também verifica se aquele hospede é válido.
 <br>
 ### Exemplificação de funcionamento:
-<img src="https://user-images.githubusercontent.com/86692306/211331493-a3ea7c77-51c3-4372-a61d-9e0129296918.png" />
+<img src="https://user-images.githubusercontent.com/86692306/213492365-2825973b-ae35-403d-9f5f-8126501af2b9.png" />
 <br>
 
 ### Config Server:
