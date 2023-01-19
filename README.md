@@ -27,6 +27,6 @@ Link: https://github.com/guipmenezes/hotel-alura-config-server
 
 ### Próximas implementações
 
-A próxima feature vai ser a criação do microserviço de reserva, que é presente nos outros projetos do Hotel Alura, completando os microserviços da arquitetura. Uma das últimas features que estou buscando implementar é um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase.
+A próxima feature vai ser a criação do microserviço de reserva, que é presente nos outros projetos do Hotel Alura, completando os microserviços da arquitetura. Uma das últimas features que estou buscando implementar é um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafka e talvez um serviço de Notificação com Twilio ou Firebase.
 <br>
 <br>
