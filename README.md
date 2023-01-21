@@ -18,7 +18,7 @@ A arquitetura utilizada foi a de microserviços, em que cada um dos serviços te
 Quando o cliente tem contato com o serviço e insere seus dados, esses dados são tratados pelo Load Balancer (que por padrão é configurado na arquitetura Round-Robin) e ao concluir o seu cadastro, o microserviço de fraude também verifica se aquele hospede é válido.
 <br>
 ### Exemplificação de funcionamento:
-<img width=50% height=50% src="exemplificação.png" />
+<img width=50% height=50% src="exemplificação.svg" />
 <br>
 
 ### Config Server:
@@ -27,6 +27,6 @@ Link: https://github.com/guipmenezes/hotel-alura-config-server
 
 ### Próximas implementações
 
-A próxima feature vai ser a criação do microserviço de reserva, que é presente nos outros projetos do Hotel Alura, completando os microserviços da arquitetura. Uma das últimas features que estou buscando implementar é um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafkae e talvez um serviço de Notificação com Twilio ou Firebase.
+A próxima feature vai ser a criação do microserviço de reserva, que é presente nos outros projetos do Hotel Alura, completando os microserviços da arquitetura. Uma das últimas features que estou buscando implementar é um serviço de Message Queue (comumente conhecido como Mensageria) com o Apache Kafka e talvez um serviço de Notificação com Twilio ou Firebase.
 <br>
 <br>
