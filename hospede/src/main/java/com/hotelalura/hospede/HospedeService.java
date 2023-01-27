@@ -41,10 +41,6 @@ public class HospedeService {
                 FraudeCheckResponse.class,
                 hospede.getHospedeId()
         );
-
-        if(fraudCheckResponse.isFraudster()) {
-            throw new IllegalStateException("Hospede fraudulento");
-        }
     }
 
     public ResponseTemplate getHospedeWithReserva(Integer hospedeId) {
