@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.client.RestTemplate;
@@ -15,6 +16,7 @@ import java.sql.Date;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class HospedeServiceTest {
@@ -22,6 +24,7 @@ class HospedeServiceTest {
     private HospedeRepository hospedeRepository;
     @Mock
     private RestTemplate restTemplate;
+    @InjectMocks
     private HospedeService underTest;
 
     @BeforeEach
@@ -68,8 +71,8 @@ class HospedeServiceTest {
                 .nacionalidade(request.nacionalidade())
                 .telefone(request.telefone())
                 .build();
-
         //when
+
         underTest.registerHospede(request);
 
         //then
@@ -81,33 +84,24 @@ class HospedeServiceTest {
     }
 
     @Test
-    void getHospedeWithReserva() {
+    void canGetHospedeWithReserva() {
         //given
         Integer id = 1;
-        long milis = System.currentTimeMillis();
 
-        ResponseTemplate rt = new ResponseTemplate();
-        Hospede hospede = new Hospede(
-                1,
-                "Guilherme",
-                "Menezes",
-                new Date(milis),
-                "brasileiro",
-                "6198218312",
-                1);
-        Reservas reserva = new Reservas(1,
-                new Date(milis),
-                new Date(milis),
-                200,
-                "cartão de crédito");
+        Hospede hospede = new Hospede();
+        hospede.setHospedeId(id);
+        when(hospedeRepository.findByHospedeId(id)).thenReturn(hospede);
+
+        Reservas reservas = new Reservas();
+        when(restTemplate.getForObject("http://RESERVA/reservas/" + hospede.getHospedeId(), Reservas.class))
+                .thenReturn(reservas);
 
         //when
-        rt.setHospede(hospede);
-        rt.setReservas(reserva);
-        underTest.getHospedeWithReserva(1);
+        ResponseTemplate result = underTest.getHospedeWithReserva(id);
 
         //then
-        Assertions.assertEquals(hospede, reserva);
+        Assertions.assertEquals(hospede, result.getHospede());
+        Assertions.assertEquals(reservas, result.getReservas());
 
     }
 }

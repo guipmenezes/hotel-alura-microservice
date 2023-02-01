@@ -30,8 +30,7 @@ class HospedeRepositoryTest {
                 "Menezes",
                 new java.sql.Date(milis),
                 "brasileiro",
-                "61983212365",
-                1
+                "61983212365"
         );
 
         underTest.save(hospede);

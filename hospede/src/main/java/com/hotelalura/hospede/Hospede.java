@@ -21,5 +21,4 @@ public class Hospede {
     private Date dataNascimento;
     private String nacionalidade;
     private String telefone;
-    private Integer reservasId;
 }

@@ -43,9 +43,9 @@ public class HospedeService {
         );
     }
 
-    public ResponseTemplate getHospedeWithReserva(Integer hospedeId) {
+    public ResponseTemplate getHospedeWithReserva(Integer id) {
         ResponseTemplate rt = new ResponseTemplate();
-        Hospede hospede = hospedeRepository.findByHospedeId(hospedeId);
+        Hospede hospede = hospedeRepository.findByHospedeId(id);
         Reservas reservas = restTemplate.getForObject("http://RESERVA/reservas/" + hospede.getHospedeId(), Reservas.class);
 
         rt.setHospede(hospede);

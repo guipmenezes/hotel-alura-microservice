@@ -63,4 +63,15 @@ class ReservaServiceTest {
 
         assertThat(capturedReserva).isEqualTo(reservas);
     }
+
+    @Test
+    void canFindReservaById() {
+        //given
+
+        //when
+        underTest.findReservasById(1);
+
+        //then
+        verify(reservasRepository).findById(1);
+    }
 }
