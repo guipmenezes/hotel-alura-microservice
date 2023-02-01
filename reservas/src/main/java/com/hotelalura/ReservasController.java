@@ -18,7 +18,7 @@ public class ReservasController {
 
     @GetMapping
     public List<Reservas> getReserva() {
-        return reservasService.getReserva();
+        return reservasService.findReserva();
     }
 
     @GetMapping("/{id}")

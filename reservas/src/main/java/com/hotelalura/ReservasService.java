@@ -12,7 +12,7 @@ import java.util.List;
 public class ReservasService {
 
     private final ReservasRepository reservasRepository;
-    public List<Reservas> getReserva() {
+    public List<Reservas> findReserva() {
         return reservasRepository.findAll();
     }
 
