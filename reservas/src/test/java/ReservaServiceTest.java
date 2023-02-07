@@ -2,7 +2,6 @@ import com.hotelalura.Reservas;
 import com.hotelalura.ReservasRegistrationRequest;
 import com.hotelalura.ReservasRepository;
 import com.hotelalura.ReservasService;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -73,5 +72,48 @@ class ReservaServiceTest {
 
         //then
         verify(reservasRepository).findById(1);
+    }
+
+    @Test
+    void canRegisterReserva() {
+        //given
+        long milis = System.currentTimeMillis();
+        ReservasRegistrationRequest request = new ReservasRegistrationRequest(
+                new Date(milis),
+                new Date(milis),
+                200,
+                "Dinheiro"
+        );
+
+        Reservas reserva = Reservas.builder()
+                .reservasId(1)
+                .dataEntrada(request.dataEntrada())
+                .dataSaida(request.dataSaida())
+                .valor(request.valor())
+                .formaPagamento(request.formaPagamento())
+                .build();
+
+        //when
+        reservasRepository.saveAndFlush(reserva);
+
+        //then
+        ArgumentCaptor<Reservas> reservasArgumentCaptor = ArgumentCaptor.forClass(Reservas.class);
+        verify(reservasRepository).saveAndFlush(reservasArgumentCaptor.capture());
+        Reservas reservasCaptured = reservasArgumentCaptor.getValue();
+
+        assertThat(reservasCaptured).isEqualTo(reserva);
+    }
+
+    @Test
+    void canFindReservasById() {
+        //given
+        Reservas reserva = new Reservas();
+        reserva.setReservasId(1);
+
+        //when
+        Reservas result = reservasRepository.findByReservasId(reserva.getReservasId());
+
+        //then
+        assertThat(reserva).isEqualTo(result);
     }
 }
