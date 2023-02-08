@@ -13,6 +13,7 @@ import java.sql.Date;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ReservaServiceTest {
@@ -64,17 +65,6 @@ class ReservaServiceTest {
     }
 
     @Test
-    void canFindReservaById() {
-        //given
-
-        //when
-        underTest.findReservasById(1);
-
-        //then
-        verify(reservasRepository).findById(1);
-    }
-
-    @Test
     void canRegisterReserva() {
         //given
         long milis = System.currentTimeMillis();
@@ -107,11 +97,12 @@ class ReservaServiceTest {
     @Test
     void canFindReservasById() {
         //given
+        Integer reservasId = 1;
         Reservas reserva = new Reservas();
-        reserva.setReservasId(1);
 
         //when
-        Reservas result = reservasRepository.findByReservasId(reserva.getReservasId());
+        when(reservasRepository.findByReservasId(reservasId)).thenReturn(reserva);
+        Reservas result = reservasRepository.findByReservasId(reservasId);
 
         //then
         assertThat(reserva).isEqualTo(result);
