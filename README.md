@@ -38,8 +38,9 @@ Para rodar essa webapplication, é necessário seguir os passos:
   * DELETE - Hospede: http://localhost:8089/hospedes/{id do hospede}
   * POST - Reserva: http://localhost:8089/reservas (necessário seguir estrutura para postagem)
   * GET - Reserva: http://localhost:8089/reservas
+  * DELETE - Reserva: http://localhost:8089/reservas/1
   * GET - FraudeCheck: http://localhost:8089/fraude-check/{id do hospede}
-  * (Bugged) GET - Hospede com Reserva: http://localhost:8089/reservas/1
+  * GET - Hospede com a Reserva: http://localhost:8089/hospedes/reserva/{id do hospede}
 
 ### Exemplificação de funcionamento:
 <img src="https://user-images.githubusercontent.com/86692306/213831794-44d95f2d-e760-4b2e-a676-1201e72a79df.png" />
