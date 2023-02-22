@@ -32,7 +32,7 @@ Para rodar essa webapplication, é necessário seguir os passos:
   * HospedeApplication;
   * ReservasApplication; e
   * FraudeApplication.
-* É possível testar a aplicação por meio do Postman, utilizando das rotas:
+* É possível testar a aplicação por meio do Postman, utilizando das rotas pré-configuradas:
   * POST - Hospede: http://localhost:8089/hospedes (necessário seguir estrutura para postagem)
   * GET - Hospede: http://localhost:8089/hospedes
   * DELETE - Hospede: http://localhost:8089/hospedes/{id do hospede}
