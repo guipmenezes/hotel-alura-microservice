@@ -31,7 +31,7 @@ public class HospedeController {
         hospedeService.deleteHospede(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/reserva/{id}")
     public ResponseTemplate getHospedeWithReserva(@PathVariable("id") Integer hospedeId) {
         log.info("Trazendo o hospede com a reserva");
         return hospedeService.getHospedeWithReserva(hospedeId);
