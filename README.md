@@ -24,7 +24,7 @@ Quando o cliente tem contato com o serviço e insere seus dados, esses dados sã
 Para rodar essa webapplication, é necessário seguir os passos:
 * Executar o Jar do Zipkin para fazer o rastreamento distribuído;
 * Criar as bases de dados no PostgreSQL para os microsserviços de reservas, hospedes e fraude;
-* Ajustar as configurações no config server;
+* Ajustar as configurações no config server e nas configurações das aplicações (application.yml);
 * Executar a aplicação na seguinte ordem:
   * EurekaServer;
   * CloudConfigServerApplication;
