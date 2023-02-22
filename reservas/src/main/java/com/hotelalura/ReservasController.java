@@ -31,4 +31,10 @@ public class ReservasController {
         log.info("novo registro de reserva {}", reservasRegistrationRequest);
         reservasService.registerReserva(reservasRegistrationRequest);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteReserva(@PathVariable("id") Integer reservaId) {
+        log.info("Deletando a reserva...");
+        reservasService.deleteReserva(reservaId);
+    }
 }

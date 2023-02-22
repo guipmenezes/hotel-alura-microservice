@@ -30,4 +30,8 @@ public class ReservasService {
         log.info("Encontrando uma nova reserva por meio do repositório");
         return reservasRepository.findByReservasId(reservasId);
     }
+
+    public void deleteReserva(Integer reservaId) {
+        reservasRepository.deleteById(reservaId);
+    }
 }
