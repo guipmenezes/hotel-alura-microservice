@@ -37,6 +37,20 @@ class ReservaServiceTest {
     }
 
     @Test
+    void canDeleteReservaById() {
+        //given
+        Date date1 = new Date(2022-12-25);
+        Date date2 = new Date(2023-01-01);
+        Reservas reserva = new Reservas(1, date1, date2, 200, "À vista");
+
+        //when
+        underTest.deleteReserva(reserva.getReservasId());
+
+        //then
+        verify(reservasRepository).deleteById(reserva.getReservasId());
+    }
+
+    @Test
     void canRegisterReservation() {
         //given
         long milis = System.currentTimeMillis();
