@@ -17,6 +17,8 @@
       <module>hystrix-dashboard</module>
       <module>cloud-config-server</module>
       <module>reservas</module>
+    <module>spring-rabbitmq-producer</module>
+    <module>spring-rabbitmq-consumer-new</module>
   </modules>
 
   <name>hotelaluraservice</name>
@@ -118,6 +120,15 @@
       <artifactId>mockito-inline</artifactId>
       <version>3.11.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-amqp</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.amqp</groupId>
+      <artifactId>spring-rabbit-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -127,6 +138,11 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <version>${spring.boot.maven.plugin.version}</version>
+          <configuration>
+            <compilerArguments>
+              <arg>-parameters</arg>
+            </compilerArguments>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
