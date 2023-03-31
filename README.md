@@ -16,6 +16,9 @@
 
 ## Sobre o projeto:
 Seguindo a sequência dos projetos do Hotel Alura (Desktop app e Rest API), este projeto é a implementação de um serviço de Hotelaria, que contém cadastro de Hospede e Reserva com sistema contra fraudes.
+
+Essa versão de backend do ecossitema Alura apenas provê a REST API. **Não possui UI**. Logo logo estarei desenvolvendo o Front-end em Angular.
+
 A arquitetura utilizada foi a de microserviços, em que cada um dos serviços tem o seu próprio banco de dados e interagem entre si por meio de uma comunicação síncrona.
 Quando o cliente tem contato com o serviço e insere seus dados, esses dados são tratados pelo Load Balancer (que por padrão é configurado na arquitetura Round-Robin) e ao concluir o seu cadastro, o microserviço de fraude também verifica se aquele hospede é válido.
 <br>
