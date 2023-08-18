@@ -1,19 +1,5 @@
 # Aplicação Web do Hotel Alura desenvolvida na arquitetura de microsserviços
 
-## 🖥️ Tecnologias utilizadas:
-* Java 18
-* Spring Boot 3.0
-* Maven
-* Spring Data JPA
-* Spring Cloud 2022.0.0
-* Spring Cloud Netflix Eureka Server/Client
-* Spring Cloud Config Server
-* Docker
-* Zipkin
-* PostreSQL
-* Testes unitários
-  * JUnit e Mockito
-
 ## Sobre o projeto:
 Seguindo a sequência dos projetos do Hotel Alura (Desktop app e Rest API), este projeto é a implementação de um serviço de Hotelaria, que contém cadastro de Hospede e Reserva com sistema contra fraudes.
 
@@ -48,6 +34,20 @@ Para rodar essa webapplication, é necessário seguir os passos:
 ### Exemplificação de funcionamento:
 <img src="https://user-images.githubusercontent.com/86692306/213831794-44d95f2d-e760-4b2e-a676-1201e72a79df.png" />
 <br>
+
+## 🖥️ Tecnologias utilizadas:
+* Java 18
+* Spring Boot 3.0
+* Maven
+* Spring Data JPA
+* Spring Cloud 2022.0.0
+* Spring Cloud Netflix Eureka Server/Client
+* Spring Cloud Config Server
+* Docker
+* Zipkin
+* PostreSQL
+* Testes unitários
+  * JUnit e Mockito
 
 ### Config Server:
 Com a implementação do Cloud Config Server, optei por armazenar as configurações no próprio github.
