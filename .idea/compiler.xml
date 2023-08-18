@@ -15,16 +15,16 @@
         <module name="cloud-config-server" />
         <module name="reservas" />
         <module name="hystrix-dashboard" />
-        <module name="spring-rabbitmq-producer" />
         <module name="hospede" />
         <module name="eureka-server" />
         <module name="cloud-gateway" />
-        <module name="spring-rabbitmq-consumer-new" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kafka" target="18" />
       <module name="spring-rabbitmq-consumer" target="18" />
+      <module name="spring-rabbitmq-consumer-new" target="18" />
+      <module name="spring-rabbitmq-producer" target="18" />
     </bytecodeTargetLevel>
   </component>
 </project>

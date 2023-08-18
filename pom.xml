@@ -9,15 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>hospede</module>
-        <module>fraude</module>
         <module>eureka-server</module>
         <module>cloud-gateway</module>
         <module>hystrix-dashboard</module>
         <module>cloud-config-server</module>
+        <module>hospede</module>
+        <module>fraude</module>
         <module>reservas</module>
-        <module>spring-rabbitmq-producer</module>
-        <module>spring-rabbitmq-consumer-new</module>
     </modules>
 
     <name>hotelaluraservice</name>
