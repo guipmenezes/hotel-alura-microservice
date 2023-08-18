@@ -1,7 +1,7 @@
-import com.hotelalura.Reservas;
-import com.hotelalura.ReservasRegistrationRequest;
-import com.hotelalura.ReservasRepository;
-import com.hotelalura.ReservasService;
+import com.hotelalura.Model.Reservas;
+import com.hotelalura.Controller.ReservasRegistrationRequest;
+import com.hotelalura.Model.ReservasRepository;
+import com.hotelalura.Service.ReservasService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

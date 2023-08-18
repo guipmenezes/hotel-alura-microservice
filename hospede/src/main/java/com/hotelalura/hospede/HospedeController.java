@@ -3,7 +3,6 @@ package com.hotelalura.hospede;
 import com.hotelalura.hospede.VO.ResponseTemplate;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 public class HospedeController {
 
-    @Autowired
     private final HospedeService hospedeService;
 
     @GetMapping

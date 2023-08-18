@@ -1,4 +1,4 @@
-package com.hotelalura;
+package com.hotelalura.Config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

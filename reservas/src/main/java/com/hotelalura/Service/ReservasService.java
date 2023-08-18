@@ -1,5 +1,8 @@
-package com.hotelalura;
+package com.hotelalura.Service;
 
+import com.hotelalura.Model.Reservas;
+import com.hotelalura.Controller.ReservasRegistrationRequest;
+import com.hotelalura.Model.ReservasRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,6 +21,7 @@ public class ReservasService {
 
     public void registerReserva(ReservasRegistrationRequest request) {
         Reservas reserva = Reservas.builder()
+                .roomType(request.roomType())
                 .dataEntrada(request.dataEntrada())
                 .dataSaida(request.dataSaida())
                 .valor(request.valor())

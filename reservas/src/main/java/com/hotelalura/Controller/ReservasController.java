@@ -1,5 +1,7 @@
-package com.hotelalura;
+package com.hotelalura.Controller;
 
+import com.hotelalura.Model.Reservas;
+import com.hotelalura.Service.ReservasService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
