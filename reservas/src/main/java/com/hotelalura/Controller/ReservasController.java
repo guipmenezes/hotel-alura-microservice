@@ -5,6 +5,7 @@ import com.hotelalura.Service.ReservasService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,19 +25,26 @@ public class ReservasController {
     }
 
     @GetMapping("/{id}")
-    public Reservas findReservasById(@PathVariable("id") Integer reservasId) {
+    public ResponseEntity<Reservas> findReservasById(@PathVariable("id") Integer reservasId) {
         return reservasService.findReservasById(reservasId);
     }
 
     @PostMapping
-    public void registerReserva(@RequestBody ReservasRegistrationRequest reservasRegistrationRequest) {
-        log.info("novo registro de reserva {}", reservasRegistrationRequest);
-        reservasService.registerReserva(reservasRegistrationRequest);
+    public ResponseEntity<Reservas> registerReserva(@RequestBody ReservasRegistrationRequest request) {
+        log.info("novo registro de reserva {}", request);
+        return reservasService.registerReserva(request);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity updateReserva(@PathVariable("id") Integer reservaId,
+                                        @RequestBody ReservasRegistrationRequest request) {
+        log.info("atualizando a reserva {}", request);
+        return reservasService.updateReserva(reservaId, request);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteReserva(@PathVariable("id") Integer reservaId) {
+    public ResponseEntity<Void> deleteReserva(@PathVariable("id") Integer reservaId) {
         log.info("Deletando a reserva...");
-        reservasService.deleteReserva(reservaId);
+        return reservasService.deleteReserva(reservaId);
     }
 }

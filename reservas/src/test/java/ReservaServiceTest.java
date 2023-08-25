@@ -41,7 +41,7 @@ class ReservaServiceTest {
         //given
         Date date1 = new Date(2022-12-25);
         Date date2 = new Date(2023-01-01);
-        Reservas reserva = new Reservas(1, date1, date2, 200, "À vista");
+        Reservas reserva = new Reservas(1, "Suite", date1, date2, 200.00, "À vista");
 
         //when
         underTest.deleteReserva(reserva.getReservasId());
@@ -55,12 +55,14 @@ class ReservaServiceTest {
         //given
         long milis = System.currentTimeMillis();
         ReservasRegistrationRequest request = new ReservasRegistrationRequest(
+                "Suite",
                 new Date(milis),
                 new Date(milis),
-                200,
+                200.00,
                 "Cartão de crédito"
         );
         Reservas reservas = Reservas.builder()
+                .formaPagamento(request.formaPagamento())
                 .dataEntrada(request.dataEntrada())
                 .dataSaida(request.dataSaida())
                 .valor(request.valor())
@@ -83,14 +85,16 @@ class ReservaServiceTest {
         //given
         long milis = System.currentTimeMillis();
         ReservasRegistrationRequest request = new ReservasRegistrationRequest(
+                "Suite",
                 new Date(milis),
                 new Date(milis),
-                200,
+                200.00,
                 "Dinheiro"
         );
 
         Reservas reserva = Reservas.builder()
                 .reservasId(1)
+                .formaPagamento(request.formaPagamento())
                 .dataEntrada(request.dataEntrada())
                 .dataSaida(request.dataSaida())
                 .valor(request.valor())

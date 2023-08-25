@@ -12,7 +12,8 @@ import java.sql.Date;
 @NoArgsConstructor
 public class Reservas {
     @Id
-    @GeneratedValue(strategy= GenerationType.UUID)
+    @SequenceGenerator(name = "reserva_id_sequence", sequenceName = "reserva_id_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reserva_id_sequence")
     private Integer reservasId;
     private String roomType;
     private Date dataEntrada;
