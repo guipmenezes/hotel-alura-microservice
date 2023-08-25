@@ -1,4 +1,4 @@
-package com.hotelalura.RabbitMQ.Constants;
+package Constants;
 
 public class RabbitMQConstants {
 

@@ -11,7 +11,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
-        <option value="$PROJECT_DIR$/librabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/spring-rabbitmq-consumer-new/pom.xml" />
         <option value="$PROJECT_DIR$/spring-rabbitmq-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/spring-rabbitmq-producer/pom.xml" />

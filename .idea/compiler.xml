@@ -11,6 +11,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="librabbitmq" />
         <module name="fraude" />
         <module name="cloud-config-server" />
         <module name="reservas" />
@@ -22,7 +23,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kafka" target="18" />
-      <module name="librabbitmq" target="18" />
       <module name="spring-rabbitmq-consumer" target="18" />
       <module name="spring-rabbitmq-consumer-new" target="18" />
       <module name="spring-rabbitmq-producer" target="18" />

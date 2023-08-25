@@ -1,7 +1,7 @@
 package com.hotelalura.Service;
 
+import DTO.ReservasRegistrationRequest;
 import com.hotelalura.Model.Reservas;
-import com.hotelalura.Controller.ReservasRegistrationRequest;
 import com.hotelalura.Model.ReservasRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

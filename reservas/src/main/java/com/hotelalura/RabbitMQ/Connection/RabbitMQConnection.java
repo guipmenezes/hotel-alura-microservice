@@ -1,6 +1,6 @@
 package com.hotelalura.RabbitMQ.Connection;
 
-import com.hotelalura.RabbitMQ.Constants.RabbitMQConstants;
+import Constants.RabbitMQConstants;
 import jakarta.annotation.PostConstruct;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;

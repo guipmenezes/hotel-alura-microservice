@@ -1,4 +1,4 @@
-package com.hotelalura.Controller;
+package DTO;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

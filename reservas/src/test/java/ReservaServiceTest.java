@@ -1,5 +1,5 @@
+import DTO.ReservasRegistrationRequest;
 import com.hotelalura.Model.Reservas;
-import com.hotelalura.Controller.ReservasRegistrationRequest;
 import com.hotelalura.Model.ReservasRepository;
 import com.hotelalura.Service.ReservasService;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.Date;
+import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
@@ -119,8 +120,8 @@ class ReservaServiceTest {
         Reservas reserva = new Reservas();
 
         //when
-        when(reservasRepository.findByReservasId(reservasId)).thenReturn(reserva);
-        Reservas result = reservasRepository.findByReservasId(reservasId);
+        when(reservasRepository.findById(reservasId)).thenReturn(Optional.of(reserva));
+        Optional<Reservas> result = reservasRepository.findById(reservasId);
 
         //then
         assertThat(reserva).isEqualTo(result);

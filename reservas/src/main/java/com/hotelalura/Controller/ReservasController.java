@@ -1,6 +1,9 @@
 package com.hotelalura.Controller;
 
+import Constants.RabbitMQConstants;
+import DTO.ReservasRegistrationRequest;
 import com.hotelalura.Model.Reservas;
+import com.hotelalura.RabbitMQ.Service.RabbitMQService;
 import com.hotelalura.Service.ReservasService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +21,7 @@ public class ReservasController {
 
     @Autowired
     private ReservasService reservasService;
+    private RabbitMQService rabbitMQService;
 
     @GetMapping
     public List<Reservas> getReserva() {
@@ -39,6 +43,7 @@ public class ReservasController {
     public ResponseEntity updateReserva(@PathVariable("id") Integer reservaId,
                                         @RequestBody ReservasRegistrationRequest request) {
         log.info("atualizando a reserva {}", request);
+        this.rabbitMQService.sendMessage(RabbitMQConstants.RESERVATION_QUEUE, request.roomType());
         return reservasService.updateReserva(reservaId, request);
     }
 
