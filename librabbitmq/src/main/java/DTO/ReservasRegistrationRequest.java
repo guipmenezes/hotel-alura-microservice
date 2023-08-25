@@ -2,14 +2,16 @@ package DTO;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public record ReservasRegistrationRequest(
-        String roomType,
+public class ReservasRegistrationRequest implements Serializable {
+
+        public String roomType;
         @DateTimeFormat(pattern="yyyy-MM-dd")
-        Date dataEntrada,
+        public Date dataEntrada;
         @DateTimeFormat(pattern="yyyy-MM-dd")
-        Date dataSaida,
-        Double valor,
-        String formaPagamento
-) { }
+        public Date dataSaida;
+        public Double valor;
+        public String formaPagamento;
+}

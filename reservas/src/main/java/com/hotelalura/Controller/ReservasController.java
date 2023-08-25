@@ -36,6 +36,7 @@ public class ReservasController {
     @PostMapping
     public ResponseEntity<Reservas> registerReserva(@RequestBody ReservasRegistrationRequest request) {
         log.info("novo registro de reserva {}", request);
+        this.rabbitMQService.sendMessage(RabbitMQConstants.RESERVATION_QUEUE, request);
         return reservasService.registerReserva(request);
     }
 
@@ -43,7 +44,6 @@ public class ReservasController {
     public ResponseEntity updateReserva(@PathVariable("id") Integer reservaId,
                                         @RequestBody ReservasRegistrationRequest request) {
         log.info("atualizando a reserva {}", request);
-        this.rabbitMQService.sendMessage(RabbitMQConstants.RESERVATION_QUEUE, request.roomType());
         return reservasService.updateReserva(reservaId, request);
     }
 

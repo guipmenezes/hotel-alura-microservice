@@ -1,5 +1,9 @@
 package com.hotelalura.hospede;
 
+import com.hotelalura.hospede.Controller.HospedeRegistrationRequest;
+import com.hotelalura.hospede.Model.Hospede;
+import com.hotelalura.hospede.Model.HospedeRepository;
+import com.hotelalura.hospede.Service.HospedeService;
 import com.hotelalura.hospede.VO.Reservas;
 import com.hotelalura.hospede.VO.ResponseTemplate;
 import org.junit.jupiter.api.Assertions;

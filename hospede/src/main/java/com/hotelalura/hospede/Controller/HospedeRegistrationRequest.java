@@ -1,4 +1,4 @@
-package com.hotelalura.hospede;
+package com.hotelalura.hospede.Controller;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

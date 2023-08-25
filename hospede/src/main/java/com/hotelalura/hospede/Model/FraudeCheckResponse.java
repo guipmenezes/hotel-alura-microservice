@@ -1,4 +1,4 @@
-package com.hotelalura.hospede;
+package com.hotelalura.hospede.Model;
 
 public record FraudeCheckResponse(Boolean isFraudster) {
 

@@ -55,19 +55,20 @@ class ReservaServiceTest {
     void canRegisterReservation() {
         //given
         long milis = System.currentTimeMillis();
-        ReservasRegistrationRequest request = new ReservasRegistrationRequest(
-                "Suite",
-                new Date(milis),
-                new Date(milis),
-                200.00,
-                "Cartão de crédito"
-        );
+        ReservasRegistrationRequest request = new ReservasRegistrationRequest();
+        request.roomType = "Suite";
+        request.dataEntrada = new Date(milis);
+        request.dataSaida = new Date(milis);
+        request.valor = 200.00;
+        request.formaPagamento = "Cartão de crédito";
+
         Reservas reservas = Reservas.builder()
-                .formaPagamento(request.formaPagamento())
-                .dataEntrada(request.dataEntrada())
-                .dataSaida(request.dataSaida())
-                .valor(request.valor())
-                .formaPagamento(request.formaPagamento())
+                .roomType(request.roomType)
+                .formaPagamento(request.formaPagamento)
+                .dataEntrada(request.dataEntrada)
+                .dataSaida(request.dataSaida)
+                .valor(request.valor)
+                .formaPagamento(request.formaPagamento)
                 .build();
 
         //when
@@ -85,21 +86,20 @@ class ReservaServiceTest {
     void canRegisterReserva() {
         //given
         long milis = System.currentTimeMillis();
-        ReservasRegistrationRequest request = new ReservasRegistrationRequest(
-                "Suite",
-                new Date(milis),
-                new Date(milis),
-                200.00,
-                "Dinheiro"
-        );
+        ReservasRegistrationRequest request = new ReservasRegistrationRequest();
+        request.roomType = "Suite";
+        request.dataEntrada = new Date(milis);
+        request.dataSaida = new Date(milis);
+        request.valor = 200.00;
+        request.formaPagamento = "Dinheiro";
 
         Reservas reserva = Reservas.builder()
                 .reservasId(1)
-                .formaPagamento(request.formaPagamento())
-                .dataEntrada(request.dataEntrada())
-                .dataSaida(request.dataSaida())
-                .valor(request.valor())
-                .formaPagamento(request.formaPagamento())
+                .formaPagamento(request.formaPagamento)
+                .dataEntrada(request.dataEntrada)
+                .dataSaida(request.dataSaida)
+                .valor(request.valor)
+                .formaPagamento(request.formaPagamento)
                 .build();
 
         //when

@@ -1,4 +1,4 @@
-package com.hotelalura.hospede;
+package com.hotelalura.hospede.Config;
 
 import org.mockito.Spy;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;

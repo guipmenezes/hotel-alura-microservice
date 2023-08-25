@@ -23,11 +23,11 @@ public class ReservasService {
 
     public ResponseEntity<Reservas> registerReserva(ReservasRegistrationRequest request) {
         Reservas reserva = Reservas.builder()
-                .roomType(request.roomType())
-                .dataEntrada(request.dataEntrada())
-                .dataSaida(request.dataSaida())
-                .valor(request.valor())
-                .formaPagamento(request.formaPagamento())
+                .roomType(request.roomType)
+                .dataEntrada(request.dataEntrada)
+                .dataSaida(request.dataSaida)
+                .valor(request.valor)
+                .formaPagamento(request.formaPagamento)
                 .build();
 
         return ResponseEntity.status(HttpStatus.CREATED).body(reservasRepository.saveAndFlush(reserva));
@@ -43,11 +43,11 @@ public class ReservasService {
     public ResponseEntity<Reservas> updateReserva(Integer reservaId, ReservasRegistrationRequest request) {
         return reservasRepository.findById(reservaId)
                 .map(reserva -> {
-                    reserva.setRoomType(request.roomType());
-                    reserva.setDataEntrada(request.dataEntrada());
-                    reserva.setDataSaida(request.dataSaida());
-                    reserva.setValor(request.valor());
-                    reserva.setFormaPagamento(request.formaPagamento());
+                    reserva.setRoomType(request.roomType);
+                    reserva.setDataEntrada(request.dataEntrada);
+                    reserva.setDataSaida(request.dataSaida);
+                    reserva.setValor(request.valor);
+                    reserva.setFormaPagamento(request.formaPagamento);
 
                     Reservas updated = reservasRepository.save(reserva);
                     return ResponseEntity.ok().body(updated);
