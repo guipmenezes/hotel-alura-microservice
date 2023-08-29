@@ -23,6 +23,10 @@ spring:
     stream:
       username: guest
       password: guest
+    #listener:
+      #direct:
+        #prefetch: 10
+      #type: direct
 
 zipkin:
   base-url: http://127.0.0.1:9411/
