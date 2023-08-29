@@ -17,6 +17,7 @@
         <module>fraude</module>
         <module>reservas</module>
         <module>librabbitmq</module>
+        <module>consumer-reservation-nodejs</module>
     </modules>
 
     <name>hotelaluraservice</name>

@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/cloud-config-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-reservation-nodejs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-reservation-nodejs/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fraude/src/main/java" charset="UTF-8" />

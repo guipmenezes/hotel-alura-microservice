@@ -22,6 +22,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="consumer-reservation-nodejs" target="18" />
       <module name="kafka" target="18" />
       <module name="spring-rabbitmq-consumer" target="18" />
       <module name="spring-rabbitmq-consumer-new" target="18" />
