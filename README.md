@@ -44,6 +44,7 @@ Para rodar essa webapplication, é necessário seguir os passos:
 * Spring Cloud Netflix Eureka Server/Client
 * Spring Cloud Config Server
 * Docker
+* RabbitMQ
 * Zipkin
 * PostreSQL
 * Testes unitários
