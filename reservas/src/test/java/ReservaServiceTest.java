@@ -1,7 +1,7 @@
-import com.hotelalura.Reservas;
-import com.hotelalura.ReservasRegistrationRequest;
-import com.hotelalura.ReservasRepository;
-import com.hotelalura.ReservasService;
+import DTO.ReservasRegistrationRequest;
+import com.hotelalura.Model.Reservas;
+import com.hotelalura.Model.ReservasRepository;
+import com.hotelalura.Service.ReservasService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.Date;
+import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
@@ -41,7 +42,7 @@ class ReservaServiceTest {
         //given
         Date date1 = new Date(2022-12-25);
         Date date2 = new Date(2023-01-01);
-        Reservas reserva = new Reservas(1, date1, date2, 200, "À vista");
+        Reservas reserva = new Reservas(1, "Suite", date1, date2, 200.00, "À vista");
 
         //when
         underTest.deleteReserva(reserva.getReservasId());
@@ -54,17 +55,20 @@ class ReservaServiceTest {
     void canRegisterReservation() {
         //given
         long milis = System.currentTimeMillis();
-        ReservasRegistrationRequest request = new ReservasRegistrationRequest(
-                new Date(milis),
-                new Date(milis),
-                200,
-                "Cartão de crédito"
-        );
+        ReservasRegistrationRequest request = new ReservasRegistrationRequest();
+        request.roomType = "Suite";
+        request.dataEntrada = new Date(milis);
+        request.dataSaida = new Date(milis);
+        request.valor = 200.00;
+        request.formaPagamento = "Cartão de crédito";
+
         Reservas reservas = Reservas.builder()
-                .dataEntrada(request.dataEntrada())
-                .dataSaida(request.dataSaida())
-                .valor(request.valor())
-                .formaPagamento(request.formaPagamento())
+                .roomType(request.roomType)
+                .formaPagamento(request.formaPagamento)
+                .dataEntrada(request.dataEntrada)
+                .dataSaida(request.dataSaida)
+                .valor(request.valor)
+                .formaPagamento(request.formaPagamento)
                 .build();
 
         //when
@@ -82,19 +86,20 @@ class ReservaServiceTest {
     void canRegisterReserva() {
         //given
         long milis = System.currentTimeMillis();
-        ReservasRegistrationRequest request = new ReservasRegistrationRequest(
-                new Date(milis),
-                new Date(milis),
-                200,
-                "Dinheiro"
-        );
+        ReservasRegistrationRequest request = new ReservasRegistrationRequest();
+        request.roomType = "Suite";
+        request.dataEntrada = new Date(milis);
+        request.dataSaida = new Date(milis);
+        request.valor = 200.00;
+        request.formaPagamento = "Dinheiro";
 
         Reservas reserva = Reservas.builder()
                 .reservasId(1)
-                .dataEntrada(request.dataEntrada())
-                .dataSaida(request.dataSaida())
-                .valor(request.valor())
-                .formaPagamento(request.formaPagamento())
+                .formaPagamento(request.formaPagamento)
+                .dataEntrada(request.dataEntrada)
+                .dataSaida(request.dataSaida)
+                .valor(request.valor)
+                .formaPagamento(request.formaPagamento)
                 .build();
 
         //when
@@ -115,8 +120,8 @@ class ReservaServiceTest {
         Reservas reserva = new Reservas();
 
         //when
-        when(reservasRepository.findByReservasId(reservasId)).thenReturn(reserva);
-        Reservas result = reservasRepository.findByReservasId(reservasId);
+        when(reservasRepository.findById(reservasId)).thenReturn(Optional.of(reserva));
+        Optional<Reservas> result = reservasRepository.findById(reservasId);
 
         //then
         assertThat(reserva).isEqualTo(result);

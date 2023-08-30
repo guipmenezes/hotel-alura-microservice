@@ -1,6 +1,6 @@
 package com.hotelalura.hospede.VO;
 
-import com.hotelalura.hospede.Hospede;
+import com.hotelalura.hospede.Model.Hospede;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

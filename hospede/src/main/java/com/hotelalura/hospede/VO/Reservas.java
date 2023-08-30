@@ -11,6 +11,7 @@ import java.sql.Date;
 @NoArgsConstructor
 public class Reservas {
     private Integer reservasId;
+    private String roomType;
     private Date dataEntrada;
     private Date dataSaida;
     private Integer valor;

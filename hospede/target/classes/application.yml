@@ -17,6 +17,16 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format-sql: true
     show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    stream:
+      username: guest
+      password: guest
+    #listener:
+      #direct:
+        #prefetch: 10
+      #type: direct
 
 zipkin:
   base-url: http://127.0.0.1:9411/
